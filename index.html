@@ -15,19 +15,32 @@
   <body>
     <div class="body-container">
       <header>
-        <div class="joe-bloggs">
-          <img src="./assets/image-one.jpg" alt="" />
+        <div class="hero">
+          <picture>
+            <source
+              media="(min-width: 920px)"
+              srcset="./assets/image-one.jpg"
+            />
+            <source
+              media="(max-width: 480px)"
+              srcset="./assets/image-four.jpg"
+            />
+            <img src="./assets/image-one.jpg" alt="" />
+          </picture>
           <h1>Joe Bloggs</h1>
         </div>
         <div class="about">
-          <h2>About me</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio
-            reiciendis quia exercitationem distinctio eos quisquam voluptas
-            natus doloremque? Velit aperiam maiores adipisci ad id commodi eaque
-            optio. Beatae, cumque. Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Voluptas placeat omnis qui.
-          </p>
+          <div>
+            <div class="obstacle"></div>
+            <h2>About me</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio
+              reiciendis quia exercitationem distinctio eos quisquam voluptas
+              natus doloremque? Velit aperiam maiores adipisci ad id commodi
+              eaque optio. Beatae, cumque. Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Voluptas placeat omnis qui.
+            </p>
+          </div>
           <div class="socials">
             <a href=""
               ><img class="icon" src="./assets/github-original.svg" alt=""
@@ -43,7 +56,7 @@
       </header>
       <main>
         <h2>My work</h2>
-        <div class="projects">
+        <section class="projects">
           <div class="card">
             <div class="screenshot">screenshot <br />of project</div>
             <div class="project-details">
@@ -152,26 +165,23 @@
               </p>
             </div>
           </div>
-        </div>
+        </section>
       </main>
       <footer>
-        <section class="contact">
+        <section class="contact-info">
           <h2>Contact Me</h2>
           <p>
             Please get in touch if you think our work could be mutually
             beneficial.
           </p>
-          <p>
-            1234 Random Road <br />
-            Random Town, California 12345
-          </p>
-          <div class="contact-info">
+          <p>1234 Random Road, Random Town, California 12345</p>
+          <div class="contact">
             <img class="icon" src="./assets/phone-outline.svg" alt="" />
-            <span>555-555-5555</span>
+            <p>555-555-5555</p>
           </div>
-          <div class="contact-info">
+          <div class="contact">
             <img class="icon" src="./assets/email-outline.svg" alt="" />
-            <span>joebloggs.is.not.real@gmail.com</span>
+            <p>fakejoe@gmail.com</p>
           </div>
           <div class="socials">
             <a href=""
@@ -185,7 +195,19 @@
             /></a>
           </div>
         </section>
-        <img src="./assets/image-two.jpg" alt="" />
+        <picture>
+          <source media="(min-width: 920px)" srcset="./assets/image-two.jpg" />
+          <source
+            media="(min-width: 650px)"
+            srcset="./assets/image-three.jpg"
+          />
+          <source media="(min-width: 480px)" srcset="./assets/image-two.jpg" />
+          <source
+            media="(max-width: 480px)"
+            srcset="./assets/image-three.jpg"
+          />
+          <img src="./assets/image-two.jpg" alt="" />
+        </picture>
       </footer>
     </div>
   </body>

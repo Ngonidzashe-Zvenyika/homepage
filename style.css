@@ -1,5 +1,11 @@
 :root {
   font-size: 62.5%;
+  --color-one: #0891b2;
+  --color-two: #ffffff;
+  --color-three: #808080;
+  --color-four: #c0c0c0;
+  --color-six: black;
+  --color-seven: #565656;
 }
 
 *,
@@ -11,7 +17,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: black;
+  color: var(--color-seven);
 }
 
 body {
@@ -27,18 +33,23 @@ header {
   display: flex;
   align-items: center;
   padding: 50px 60px;
-  background: linear-gradient(170deg, #0891b2 65%, white calc(65% + 2px) 100%);
+  background: linear-gradient(
+    170deg,
+    var(--color-one) 65%,
+    var(--color-two) calc(65% + 2px) 100%
+  );
 }
 
-header img {
-  width: 350px;
-  height: auto;
-}
-
-header div:first-child {
+.hero {
   position: relative;
   display: grid;
   justify-items: center;
+}
+
+.hero img {
+  width: 350px;
+  height: auto;
+  box-shadow: 0px 0px 5px var(--color-three);
 }
 
 h1,
@@ -48,26 +59,35 @@ h3,
   font-family: "Playfair Display";
 }
 
-header h1 {
+h1 {
   position: absolute;
   bottom: 5px;
   font-size: 42px;
   font-weight: 500;
-  color: white;
+  color: var(--color-two);
+}
+
+.about {
+  display: grid;
+  gap: 20px;
+  padding: 30px;
+  box-shadow: 3px 3px 10px var(--color-three);
+  background-color: var(--color-two);
+}
+
+h2,
+h3 {
+  color: var(--color-six);
 }
 
 h2,
 .screenshot {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-header div:nth-child(2) {
-  display: grid;
-  gap: 20px;
-  padding: 30px 20px 20px;
-  box-shadow: 3px 3px 10px grey;
-  background-color: white;
+header h2 {
+  margin-bottom: 20px;
 }
 
 .socials {
@@ -79,27 +99,28 @@ header .socials {
   justify-self: right;
 }
 
-.icon {
+header .icon {
+  width: 23px;
+  height: 23px;
+}
+
+main {
+  padding: 50px 60px 80px;
+}
+
+main .icon,
+footer .icon {
   height: 20px;
   width: 20px;
 }
 
-header .socials .icon {
-  height: 23px;
-  width: 23px;
-}
-
-main {
-  padding: 40px 60px 80px;
-}
 main h2 {
-  grid-column: 1 / 4;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
@@ -108,17 +129,17 @@ main h2 {
   flex-direction: column;
   min-height: 350px;
   box-shadow:
-    5px 5px 10px silver,
-    -0px -0px 3px silver;
+    5px 5px 10px var(--color-four),
+    -0px -0px 3px var(--color-four);
 }
 
 .screenshot {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--color-two);
   width: 100%;
-  height: 210px;
+  min-height: 210px;
   padding: 30px;
 }
 
@@ -145,7 +166,7 @@ main h2 {
 .project-details {
   display: grid;
   gap: 15px;
-  padding: 15px 20px;
+  padding: 20px;
 }
 
 .project-details > div {
@@ -154,38 +175,161 @@ main h2 {
   gap: 10px;
 }
 
+h3 {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  gap: 20px;
+  gap: 40px;
   padding: 50px 60px;
-  background-color: #0891b2;
+  background-color: var(--color-one);
 }
 
-.contact {
+.contact-info {
+  flex: 1;
   display: grid;
   gap: 20px;
 }
 
-.contact h2,
-.contact p,
-span {
-  color: white;
+.contact-info h2,
+.contact-info p {
+  color: var(--color-two);
 }
 
-.contact-info {
+.contact {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.contact .socials .icon {
+.contact-info .socials .icon {
   height: 25px;
   width: 25px;
 }
 
-footer > img {
-  max-width: 600px;
+footer picture {
+  flex: 1.5;
+}
+
+footer picture img {
+  max-width: 100%;
   height: auto;
+}
+
+@media (650px <= width < 920px) {
+  header {
+    position: relative;
+    display: block;
+    padding: 140px 80px 40px;
+  }
+
+  .obstacle {
+    float: left;
+    height: 160px;
+    width: 280px;
+  }
+
+  .hero img {
+    position: absolute;
+    top: -100px;
+    left: -40px;
+  }
+
+  h1 {
+    position: absolute;
+    left: 250px;
+    top: -80px;
+  }
+
+  .about {
+    padding: 100px 20px 50px 50px;
+  }
+
+  header h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  header .socials {
+    display: none;
+  }
+
+  main {
+    padding: 50px 80px 200px;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer {
+    padding: 40px 40px 50px;
+  }
+
+  footer picture {
+    flex: 1;
+  }
+}
+
+@media (width < 650px) {
+  header {
+    display: grid;
+    gap: 20px;
+    padding: 30px;
+    background: linear-gradient(
+      150deg,
+      var(--color-one) 40%,
+      var(--color-two) calc(40% + 2px) 100%
+    );
+  }
+
+  .hero img {
+    width: 100%;
+  }
+
+  .about {
+    text-align: center;
+    padding: 0px;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  header .socials,
+  footer .socials {
+    justify-self: center;
+  }
+
+  main {
+    padding: 30px 30px 100px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    display: block;
+    padding: 0px;
+  }
+
+  footer h2 {
+    text-align: center;
+  }
+
+  .contact-info {
+    padding: 30px 30px 70px;
+    gap: 30px;
+  }
+
+  .contact .icon {
+    display: none;
+  }
 }
