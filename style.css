@@ -220,7 +220,7 @@ footer picture img {
   height: auto;
 }
 
-@media (650px <= width < 920px) {
+@media (min-width: 650px) and (max-width: 920px) {
   header {
     position: relative;
     display: block;
@@ -275,7 +275,7 @@ footer picture img {
   }
 }
 
-@media (width < 650px) {
+@media (max-width: 650px) {
   header {
     display: grid;
     gap: 20px;
