@@ -21,6 +21,10 @@
   color: var(--color-seven);
 }
 
+a {
+  color: revert;
+}
+
 body {
   min-width: 300px;
 }
