@@ -145,7 +145,6 @@ main h2 {
   box-shadow:
     5px 5px 10px var(--color-four),
     -0px -0px 3px var(--color-four);
-  border: 2px solid black;
 }
 
 .screenshot {
