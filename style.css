@@ -31,6 +31,7 @@ body {
 
 .body-container {
   max-width: 1200px;
+  border: 3px solid var(--color-one);
   margin: auto;
 }
 
@@ -135,6 +136,12 @@ main h2 {
   display: flex;
   flex-direction: column;
   min-height: 350px;
+  border: 2px solid var(--color-six);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
   box-shadow:
     5px 5px 10px var(--color-four),
     -0px -0px 3px var(--color-four);
@@ -143,7 +150,7 @@ main h2 {
 
 .screenshot {
   width: 100%;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--color-six);
 }
 
 .project-details {
